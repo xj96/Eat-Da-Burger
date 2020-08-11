@@ -12,14 +12,17 @@ $(function () {
     };
 
     // Send the PUT request.
-    $.ajax("/api/burgers/" + id, {
-      type: "PUT",
-      data: newDevouredState,
-    }).then(function () {
-      console.log("changed devoured to", newDevouredState);
-      // Reload the page to get the updated list
-      location.reload();
-    });
+    $.ajax(
+      "/api/burgers/" + id,
+      {
+        type: "PUT",
+        data: newDevouredState,
+      })
+      .then(function () {
+        console.log("changed devoured to", newDevouredState);
+        // Reload the page to get the updated list
+        location.reload();
+      });
   });
 
   $(".create-form").on("submit", function (event) {
@@ -28,7 +31,7 @@ $(function () {
 
     var newBurger = {
       name: $("#ca").val().trim(),
-      calories: $("#ing").val().trim(),
+      // calories: $("#ing").val().trim(),
       devoured: $("[name=devoured]:checked").val().trim(),
     };
 
@@ -57,25 +60,3 @@ $(function () {
   });
 });
 
-//   $(".modified-form").on("submit", function (event) {
-//     // Make sure to preventDefault on a submit event.
-//     event.preventDefault();
-
-//     var id = $("[name=id]").val().trim();
-//     console.log(id)
-//     var newIngredients = $(".modified-form[name=ingredients]").val().trim();
-
-//     var newBurger = {
-//       ingredients: newIngredients,
-//     };
-
-//     // Send the POST request.
-//     $.ajax("/api/burgers/ingredients/" + id, {
-//       type: "PUT",
-//       data: newBurger,
-//     }).then(function () {
-//       console.log("added new burger ingredients");
-//       // Reload the page to get the updated list
-//       location.reload();
-//     });
-//   });
