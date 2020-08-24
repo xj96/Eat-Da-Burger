@@ -10,10 +10,11 @@
     "mysql": "^2.18.1",
     "nodemon": "^2.0.4"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+  "devDependencies": {
     "start": "node server.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
